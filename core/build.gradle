@@ -1,0 +1,35 @@
+apply plugin: "java"
+apply plugin: 'kotlin'
+
+//sourceCompatibility = 1.6
+//[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+//
+//sourceSets.main.java.srcDirs = ["src/"]
+//sourceSets.test.java.srcDirs = ["test/"]
+//
+//eclipse.project {
+//    name = appName + "-core"
+//}
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
+dependencies {
+    compile 'io.reactivex:rxjava:1.2.3'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    compile 'net.sourceforge.streamsupport:streamsupport-cfuture:1.5.3'
+    compile 'net.sourceforge.streamsupport:streamsupport-flow:1.5.3'
+
+    compile 'com.github.y2k:kotlinx.coroutines:0.12-compat'
+
+    compile 'com.github.y2k:libgdx-dsl:-SNAPSHOT'
+    compile 'com.github.y2k:JoyReactorCore:c7d92eb26f'
+
+    testCompile 'junit:junit:4.12'
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}

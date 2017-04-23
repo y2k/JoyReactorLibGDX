@@ -1,0 +1,8 @@
+.idea
+android/assets/.joyreactor
+android/build
+ios/robovm-build
+*.iml
+core/build
+build
+local.properties
